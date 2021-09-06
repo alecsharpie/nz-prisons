@@ -1,0 +1,8 @@
+streamlit
+os
+
+matplotlib
+
+
+numpy
+pandas
