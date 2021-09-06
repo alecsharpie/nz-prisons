@@ -9,8 +9,8 @@ import numpy as np
 import pandas as pd
 
 st.set_page_config(
-    page_title="NZ's Prisons",  # => Quick reference - Streamlit
-    page_icon="🔒",
+    page_title="NZ's Prisons",
+    page_icon="🔑",
     layout="centered",  # wide
     initial_sidebar_state="auto")
 
@@ -35,50 +35,39 @@ security = controls[1].radio(
 if security != 'All':
     prisons_df = prisons_df[prisons_df['max_security'] == security]
 
-
 order = controls[3].radio('Order by',
                              ('Total_Prisoners', 'Opened', 'Staff', 'Escape', 'Contraband'))
 
 prisons_df = prisons_df.sort_values(order.lower())
 
-
-
+components.html(
+    """<hr style="height:10px;border:none;color:#C70039;background-color:#C70039;" /> """
+)
 
 for idx, row in prisons_df.iterrows():
     st.markdown(f"""
                 ## {row['prison']}""")
 
+    st.markdown(f"""
+                [Website]({row['link']})  -
+                {row['address']}  -
+                {row['phone']}""")
+
     columns = st.columns(2)
 
     columns[0].image('images/' + row['image'], width=300)
-    #columns[0].write(prison_img)
+    columns[0].write(f"Established: {row['opened']}")
+    columns[0].write(f"{row['beds']} Bed's and {row['staff']} Staff")
+
     columns[1].markdown(f"""
-                        {row['total_prisoners']} {row['gender']} Prisoners
+                        {row['total_prisoners']} {row['gender']} Prisoners\n
+                        Security: {row['max_security']}\n\n
 
-
-
-
-
-                        Contact:
-                        [Dept Corrections Website]({row['link']})
-                        {row['address']}
-                        {row['phone']}
+                        Avg Incidents per year:\n
+                        {row['escapes']} Escapes\n
+                        {row['deaths']} Deaths\n
+                        {row['contraband']} Contraband Items
                         """)
-    #last_name = columns[1].text_input("Last name", value="Doe")
-    #columns[1].write(last_name)
-
-    #st.image('images/' + row['image'], width=300)
-
     components.html(
-        """<hr style="height:5px;border:none;color:#333;background-color:#333;" /> """
+        """<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """
     )
-
-
-
-#for idx, img in enumerate(images[:3]):
-#    prison_img = mpimg.imread('images/' + img)
-#    fig, ax = plt.subplots(figsize=(4, ))
-#    ax.axis('off')
-#   ax.imshow(prison_img, interpolation="nearest")
-#    fig.tight_layout()
-#    st.pyplot(fig)
