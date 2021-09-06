@@ -5,34 +5,29 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 import numpy as np
+import pandas as pd
+
+st.set_page_config(
+    page_title="NZ's Prisons",  # => Quick reference - Streamlit
+    page_icon="🔒",
+    layout="centered",  # wide
+    initial_sidebar_state="auto")
+
+prisons_df = pd.read_csv('data/NZ_Prisons_Master.csv')
 
 images = os.listdir('images')
 
+images = [img for img in images if img != '.DS_Store']
 
-#fig, ax = plt.subplots()
+st.header("NZ's Prisons - Our Prisons")
 
 
-#ax.imshow(face, cmap='gray')
 
-size_list = []
-for idx, img in enumerate(images):
-    if img != '.DS_Store':
-        prison_img = mpimg.imread('images/' + img)
-        size_list.append(prison_img.shape)
 
-mean_height = np.mean([size[0] for size in size_list])
-
-height_changes = [(size[0] - mean_height) / size[0] for size in size_list]
-
-new_widths = [
-    (size[0][1] + (size[0][1] * size[1])) / 5
-    for size in zip(size_list, height_changes)
-]
-
-for idx, img in enumerate(images[:10]):
-    if img != '.DS_Store':
-        prison_img = mpimg.imread('images/' + img)
-        st.image('images/' + img, width = 300)
+for idx, row in prisons_df.iterrows():
+    st.markdown(f"""
+                ## {row['prison']}""")
+    st.image('images/' + row['image'], width=300)
 
 
 #for idx, img in enumerate(images[:3]):
