@@ -1,6 +1,5 @@
 import streamlit as st
 
-
 def navigation():
     try:
         path = st.experimental_get_query_params()['p'][0]
