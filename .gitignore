@@ -2,3 +2,6 @@
 .ipynb_checkpoints/
 *.ipynb
 raw_data/
+testing
+*.pyc
+__pycache__/
