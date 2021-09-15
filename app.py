@@ -1,6 +1,42 @@
 import streamlit as st
 import streamlit.components.v1 as components
 import os
+from streamlit_pages.streamlit_pages import MultiPage
+
+st.set_page_config(
+    page_title="NZ's Prisons",
+    page_icon="🔑",
+    layout="wide",  # wide
+    initial_sidebar_state="auto")
+
+
+
+def home():
+    st.write("Welcome to home page")
+    if st.button("Click Home"):
+        st.write("Welcome to home page")
+
+
+def about():
+    st.write("Welcome to about page")
+    if st.button("Click about"):
+        st.write("Welcome to About page")
+
+
+def contact():
+    st.write("Welcome to contact page")
+    if st.button("Click Contact"):
+        st.write("Welcome to contact page")
+
+
+# call app class object
+app = MultiPage()
+# Add pages
+app.add_page("Home",home)
+app.add_page("About",about)
+app.add_page("Contact",contact)
+app.run()
+
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
@@ -8,11 +44,6 @@ import matplotlib.image as mpimg
 import numpy as np
 import pandas as pd
 
-st.set_page_config(
-    page_title="NZ's Prisons",
-    page_icon="🔑",
-    layout="centered",  # wide
-    initial_sidebar_state="auto")
 
 prisons_df = pd.read_csv('data/NZ_Prisons_Master.csv')
 
