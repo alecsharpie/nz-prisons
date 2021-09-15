@@ -1,7 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 import os
-from streamlit_pages.streamlit_pages import MultiPage
+#from streamlit_pages.streamlit_pages import MultiPage
 
 st.set_page_config(
     page_title="NZ's Prisons",
@@ -11,31 +11,31 @@ st.set_page_config(
 
 
 
-def home():
-    st.write("Welcome to home page")
-    if st.button("Click Home"):
-        st.write("Welcome to home page")
+# def home():
+#     st.write("Welcome to home page")
+#     if st.button("Click Home"):
+#         st.write("Welcome to home page")
 
 
-def about():
-    st.write("Welcome to about page")
-    if st.button("Click about"):
-        st.write("Welcome to About page")
+# def about():
+#     st.write("Welcome to about page")
+#     if st.button("Click about"):
+#         st.write("Welcome to About page")
 
 
-def contact():
-    st.write("Welcome to contact page")
-    if st.button("Click Contact"):
-        st.write("Welcome to contact page")
+# def contact():
+#     st.write("Welcome to contact page")
+#     if st.button("Click Contact"):
+#         st.write("Welcome to contact page")
 
 
-# call app class object
-app = MultiPage()
-# Add pages
-app.add_page("Home",home)
-app.add_page("About",about)
-app.add_page("Contact",contact)
-app.run()
+# # call app class object
+# app = MultiPage()
+# # Add pages
+# app.add_page("Home",home)
+# app.add_page("About",about)
+# app.add_page("Contact",contact)
+# app.run()
 
 
 import matplotlib.pyplot as plt
