@@ -5,18 +5,33 @@ import os
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+import seaborn as sns
 
 import numpy as np
 import pandas as pd
 
 st.set_page_config(
-    page_title="NZ's Prisons",
+    page_title="NZ's baddies",
     page_icon="🔑",
     layout="wide")
 
 
 def home():
-    st.write("Welcome to home page")
+
+    conviction_count = pd.read_csv('data/drug_conviction_count.csv')
+
+    st.write("We employ 6400 people to hold 8400 people captive")
+
+    st.write("Drugs")
+
+    fig, ax = plt.subplots()
+
+
+
+    sns.lineplot(data=conviction_count, hue='drug', x='year', y='count', ax = ax)
+
+    st.pyplot(fig)
+
 
 def prisons():
 
