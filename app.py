@@ -26,8 +26,6 @@ def home():
 
     fig, ax = plt.subplots()
 
-
-
     sns.lineplot(data=conviction_count, hue='drug', x='year', y='count', ax = ax)
 
     st.pyplot(fig)
