@@ -22,13 +22,24 @@ def home():
 
     st.write("We employ 6400 people to hold 8400 people captive")
 
+
+
+
     st.write("Drug Offences")
+    drugs = st.columns([2, 1])
 
-    fig, ax = plt.subplots()
-
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.set_style("ticks")
+    sns.set_palette('colorblind')
     sns.lineplot(data=conviction_count, hue='drug', x='year', y='count', ax = ax)
-
-    st.pyplot(fig)
+    plt.legend(title='Drug')
+    plt.xlabel('Year')
+    plt.ylabel('Number of Offences')
+    sns.despine()
+    drugs[0].pyplot(fig)
+    drugs[1].write("""
+        Cannabis and Meth are by far the biggest contributors to drug convictions in NZ.
+        """)
 
 
 def prisons():
