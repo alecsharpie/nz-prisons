@@ -39,6 +39,7 @@ def home():
     drugs[0].pyplot(fig)
     drugs[1].write("""
         Cannabis and Meth are by far the biggest contributors to drug convictions in NZ.
+        Multiple studies show Methamphetamine causing ~3x as much harm to self than Cannabis.
         """)
 
 
