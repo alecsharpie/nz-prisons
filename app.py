@@ -22,7 +22,7 @@ def home():
 
     st.write("We employ 6400 people to hold 8400 people captive")
 
-    st.write("Drugs")
+    st.write("Drug Offences")
 
     fig, ax = plt.subplots()
 
