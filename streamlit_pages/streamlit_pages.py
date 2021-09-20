@@ -24,7 +24,7 @@ class MultiPage:
         })
 
     def run(self):
-        st.header("NZ's baddies")
+        st.header("NZ's Prisons")
         st.markdown(""" """)
         tot_pages = len(self.menu)
         if self.location =="body":

@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 
 st.set_page_config(
-    page_title="NZ's baddies",
+    page_title="NZ's Prisons",
     page_icon="🔑",
     layout="wide")
 
@@ -21,6 +21,9 @@ def home():
     conviction_count = pd.read_csv('data/drug_conviction_count.csv')
 
     st.write("We employ 6400 people to hold 8400 people captive")
+
+    st.write("Gender")
+
 
 
 
@@ -40,6 +43,7 @@ def home():
     drugs[1].write("""
         Cannabis and Meth are by far the biggest contributors to drug convictions in NZ.
         Multiple studies show Methamphetamine causing ~3x as much harm to self than Cannabis.
+        [ref1] [ref2]
         """)
 
 
@@ -116,6 +120,6 @@ def prisons():
 # call app class object
 app = MultiPage()
 # Add pages
-app.add_page("Overview",home)
-app.add_page("Our Prisons",prisons)
+app.add_page("Prisoners",home)
+app.add_page("Prisons",prisons)
 app.run()
