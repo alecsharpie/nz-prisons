@@ -20,7 +20,12 @@ def home():
 
     conviction_count = pd.read_csv('data/drug_conviction_count.csv')
 
+    st.write("whos in our prisons?")
+
     st.write("We employ 6400 people to hold 8400 people captive")
+
+    st.write("Compared with other countries how packed are are prisons?")
+
 
     st.write("Gender")
 
