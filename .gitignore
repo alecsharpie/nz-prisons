@@ -1,6 +1,7 @@
 .DS_Store
 .ipynb_checkpoints/
 raw_data/
+notebooks/
 testing
 *.pyc
 __pycache__/
