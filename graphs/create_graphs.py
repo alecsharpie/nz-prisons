@@ -20,13 +20,14 @@ def rate_graph():
                       'rate', ascending=False).index)
     ax[0].annotate(text='NZ',
                    xy=(2, 219),
-                   fontsize=14,
+                   fontsize=13,
                    xytext=(2.3, 255),
                    arrowprops={
                        'arrowstyle': "->",
                        'color': 'grey'
                    })
-    ax[0].set_ylabel('Prisoners per 100,000 Population')
+    ax[0].set_title('Prisoners per 100,000 Population', loc = 'left', fontsize = 14)
+    ax[0].set_ylabel('')
     ax[0].set_xlabel('')
     sns.despine(ax=ax[0])
 
@@ -42,26 +43,26 @@ def rate_graph():
                marker='o',
                linewidth=0,
                markersize=4)
-    ax[1].annotate(text='New Zealand',
+    ax[1].annotate(text='NZ',
                    xy=(61, 0),
-                   fontsize=12,
-                   xytext=(61, 0.003),
+                   fontsize=13,
+                   xytext=(53, 0.003),
                    arrowprops={
                        'arrowstyle': "->",
                        'color': 'grey'
                    })
     ax[1].annotate(text='Guinea-Bissau',
                    xy=(222, 0),
-                   fontsize=12,
-                   xytext=(222, 0.003),
+                   fontsize=10,
+                   xytext=(202, 0.003),
                    arrowprops={
                        'arrowstyle': "->",
                        'color': 'grey'
                    })
     ax[1].annotate(text='United States',
                    xy=(1, 0),
-                   fontsize=12,
-                   xytext=(1, 0.003),
+                   fontsize=10,
+                   xytext=(-19, 0.003),
                    arrowprops={
                        'arrowstyle': "->",
                        'color': 'grey'

@@ -54,9 +54,9 @@ def prisons():
 
     to_convert_for_sort = ['escapes', 'deaths','contraband']
 
-    for col in to_convert_for_sort:
-        prisons_df[col] = prisons_df[col].str.replace('[^0-9]','')
-        prisons_df[col] = pd.to_numeric(prisons_df[col], errors = 'coerce')
+    #for col in to_convert_for_sort:
+    #    prisons_df[col] = prisons_df[col].str.replace('[^0-9]','')
+    #    prisons_df[col] = pd.to_numeric(prisons_df[col], errors = 'coerce', type = float)
 
     images = os.listdir('images')
 
@@ -84,9 +84,12 @@ def prisons():
         'Order by',
         ('Total_Prisoners', 'Opened', 'Staff', 'Escapes', 'Contraband'))
 
-    prisons_df = prisons_df.sort_values(order.lower(), ascending = False)
+    prisons_df = prisons_df.sort_values(order.lower(),
+                                        ascending=False,
+                                        na_position='first')
 
     st.markdown("""---""")
+
 
 
     for idx, row in prisons_df.iterrows():
@@ -102,19 +105,34 @@ def prisons():
         columns = st.columns(3)
 
         columns[0].image('images/' + row['image'])
-        columns[1].write(
+        columns[1].
+        columns[2].write(
             f"{row['total_prisoners']} {row['gender']} Prisoners\n and {row['staff']} Staff"
         )
-
-        columns[1].markdown(f"""
-                            \n
-                            Security: {row['max_security']}\n\n
-
-                            Avg Incidents per year:\n
-                            {row['escapes']} Escapes\n
-                            {row['deaths']} Deaths\n
-                            {row['contraband']} Contraband Items
+        columns[2].markdown(f"""
+                            Security: {row['max_security']}
                             """)
+        columns[2].markdown('Avg Incidents per year:')
+        columns[2].markdown(
+            f"""<p style="font-family:Sans-serif; color:#ffffff; font-size: 12px;">
+                            🏃 Escapes: {row['escapes']}<br>
+                            💀 Deaths {row['deaths']}<br>
+                            💊 Contraband {row['contraband']}<br>
+                            </p>
+                            """,
+            unsafe_allow_html=True)
+
+        # df = pd.DataFrame({
+        #     'Escapes': [row['escapes']],
+        #     'Deaths': [row['deaths']],
+        #     'Contraband': [row['contraband']]
+        # })
+        #df.style.format({
+        #    "'Escapes'": "{:20,.0f}",
+        #}).hide_index()
+        #df.index = [""] * len(df)
+        #st.table(df)
+        #columns[1].dataframe(df)
         st.markdown("""---""")
 
 
