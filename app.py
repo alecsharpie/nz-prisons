@@ -105,7 +105,7 @@ def prisons():
         columns = st.columns(3)
 
         columns[0].image('images/' + row['image'])
-        columns[1].
+        columns[1].map(row)
         columns[2].write(
             f"{row['total_prisoners']} {row['gender']} Prisoners\n and {row['staff']} Staff"
         )
