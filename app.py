@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 
 from streamlit_pages.streamlit_pages import MultiPage
-from graphs.create_graphs import rate_graph
+from graphs.create_graphs import rate_graph, drugs_graph
 
 st.set_page_config(
     page_title="NZ's Prisons",
@@ -19,15 +19,18 @@ st.set_page_config(
 
 
 def home():
-
-    conviction_count = pd.read_csv('data/drug_conviction_count.csv')
-
     st.write("whos in our prisons?")
 
     st.write("We employ 6400 people to hold 8400 people captive")
 
     st.write("Compared with other countries how packed are are prisons?")
-    st.pyplot(rate_graph())
+    rate = st.columns([2, 1])
+
+    rate[0].pyplot(rate_graph())
+
+    rate[1].write("""
+
+        """)
 
 
     st.write("Gender")
@@ -38,16 +41,7 @@ def home():
 
     st.write("Drug Offences")
     drugs = st.columns([2, 1])
-
-    fig, ax = plt.subplots(figsize=(8, 6))
-    sns.set_style("ticks")
-    sns.set_palette('colorblind')
-    sns.lineplot(data=conviction_count, hue='drug', x='year', y='count', ax = ax)
-    plt.legend(title='Drug')
-    plt.xlabel('Year')
-    plt.ylabel('Number of Offences')
-    sns.despine()
-    drugs[0].pyplot(fig)
+    drugs[0].pyplot(drugs_graph())
     drugs[1].write("""
         Cannabis and Meth are by far the biggest contributors to drug convictions in NZ.
         Multiple studies show Methamphetamine causing ~3x as much harm to self than Cannabis.

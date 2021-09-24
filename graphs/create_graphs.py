@@ -72,3 +72,20 @@ def rate_graph():
     ax[1].tick_params(left=False, bottom=False)
 
     return fig
+
+
+def drugs_graph():
+
+    conviction_count = pd.read_csv('data/drug_conviction_count.csv')
+
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.set_style("ticks")
+    sns.set_palette('colorblind')
+    sns.lineplot(data=conviction_count, hue='drug', x='year', y='count', ax=ax)
+    plt.legend(title='Drug')
+    plt.xlabel('Year')
+    plt.ylabel('Number of Offences')
+    sns.despine()
+
+    return fig
