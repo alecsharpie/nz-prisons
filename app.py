@@ -99,9 +99,9 @@ def prisons():
                     {row['phone']}""")
         st.write(f"Established: {row['opened']}")
 
-        columns = st.columns(2)
+        columns = st.columns(3)
 
-        columns[0].image('images/' + row['image'], width=300)
+        columns[0].image('images/' + row['image'])
         columns[1].write(
             f"{row['total_prisoners']} {row['gender']} Prisoners\n and {row['staff']} Staff"
         )
