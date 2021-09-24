@@ -4,7 +4,6 @@ import os
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
-import seaborn as sns
 
 import numpy as np
 import pandas as pd
@@ -51,7 +50,7 @@ def home():
 
 def prisons():
 
-    prisons_df = pd.read_csv('data/NZ_Prisons_Master.csv')
+    prisons_df = pd.read_csv('data/prisons_info.csv')
 
     to_convert_for_sort = ['escapes', 'deaths','contraband']
 
