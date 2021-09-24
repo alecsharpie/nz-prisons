@@ -11,11 +11,17 @@ def rate_graph():
     sns.set_style("ticks")
     sns.set_palette('colorblind')
 
-    sns.swarmplot(data=pop_df, y='rate', x='continent', ax=ax[0], s=4)
+    sns.swarmplot(data=pop_df,
+                  y='rate',
+                  x='continent',
+                  ax=ax[0],
+                  s=4,
+                  order=pop_df.groupby('continent').mean().sort_values(
+                      'rate', ascending=False).index)
     ax[0].annotate(text='NZ',
-                   xy=(3, 219),
+                   xy=(2, 219),
                    fontsize=14,
-                   xytext=(3.3, 255),
+                   xytext=(2.3, 255),
                    arrowprops={
                        'arrowstyle': "->",
                        'color': 'grey'
@@ -25,7 +31,7 @@ def rate_graph():
     sns.despine(ax=ax[0])
 
     ax[1].plot([0, 222], [0, 0], color='#033553', linewidth=3)
-    ax[1].plot([0, 222], [0, 0], color='white', linewidth=1)
+    ax[1].plot([0, 222], [0.00005, 0.00005], color='white', linewidth=1)
     ax[1].plot([1, 61, 222], [0, 0, 0],
                color='#033553',
                marker='o',
