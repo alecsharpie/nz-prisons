@@ -1,6 +1,11 @@
+#production
 streamlit
 matplotlib
 numpy
 pandas
 streamlit_folium
 folium
+
+
+# dev
+staticmap

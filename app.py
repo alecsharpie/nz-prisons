@@ -69,7 +69,7 @@ def prisons():
     controls = st.columns(4)
 
     region = controls[0].radio('Select a Region',
-                                ('All', 'Northern','Central','Lower North','Southern'))
+                                ('All','Upper North','Central North','Lower North','South'))
     if region != 'All':
         prisons_df = prisons_df[prisons_df['region'] == region]
 
@@ -100,27 +100,37 @@ def prisons():
                     [Website]({row['link']})  -
                     {row['address']}  -
                     {row['phone']}""")
-        st.write(f"Established: {row['opened']}")
 
-        columns = st.columns([1, 3, 1])
+        columns = st.columns(3)
 
-        columns[0].image('images/' + row['image'])
-        columns[1].map(pd.DataFrame({'lat':[row['lat']], 'lon':[row['lon']]}))
-        columns[2].write(
-            f"{row['total_prisoners']} {row['gender']} Prisoners\n and {row['staff']} Staff"
-        )
-        columns[2].markdown(f"""
-                            Security: {row['max_security']}
-                            """)
-        columns[2].markdown('Avg Incidents per year:')
+        columns[0].image('maps/' + row['image'])
+        columns[1].image('images/' + row['image'])
+
         columns[2].markdown(
-            f"""<p style="font-family:Sans-serif; color:#ffffff; font-size: 12px;">
-                            🏃 Escapes: {row['escapes']}<br>
-                            💀 Deaths {row['deaths']}<br>
-                            💊 Contraband {row['contraband']}<br>
+            f"""<p style="font-family:Sans-serif; color:#ffffff; font-size: 14px;">
+                            {row['total_prisoners']} {row['gender']} Prisoners<br>
+                            {row['staff']} Staff<br>
                             </p>
                             """,
             unsafe_allow_html=True)
+        columns[2].markdown(
+            f"""<p style="font-family:Sans-serif; color:#ffffff; font-size: 12px;">
+                            🛡️ {row['max_security']} security<br>
+                            <br>
+                            🏃 {row['escapes']} avg escapes per year<br>
+                            💀 {row['deaths']} avg deaths per year<br>
+                            💊 {row['contraband']} avg contraband items per year<br>
+                            </p>
+                            """,
+            unsafe_allow_html=True)
+        columns[2].markdown(
+            f"""<p style="font-family:Sans-serif; color:#ffffff; font-size: 14px;">
+                            Established in {row['opened']}<br>
+                            </p>
+                            """,
+            unsafe_allow_html=True)
+
+
 
         # df = pd.DataFrame({
         #     'Escapes': [row['escapes']],
