@@ -1,6 +1,5 @@
 import streamlit as st
 import streamlit.components.v1 as components
-from streamlit_pages.streamlit_pages import MultiPage
 import os
 
 import matplotlib.pyplot as plt
@@ -9,6 +8,9 @@ import seaborn as sns
 
 import numpy as np
 import pandas as pd
+
+from streamlit_pages.streamlit_pages import MultiPage
+from graphs.create_graphs import rate_graph
 
 st.set_page_config(
     page_title="NZ's Prisons",
@@ -25,6 +27,7 @@ def home():
     st.write("We employ 6400 people to hold 8400 people captive")
 
     st.write("Compared with other countries how packed are are prisons?")
+    st.pyplot(rate_graph())
 
 
     st.write("Gender")

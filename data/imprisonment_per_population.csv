@@ -1,0 +1,223 @@
+,country,code,year,rate,continent,rank
+0,Afghanistan,AFG,2018,88,Asia,160.0
+1,Albania,ALB,2018,193,Europe,78.0
+2,Algeria,DZA,2018,146,Africa,105.5
+3,American Samoa,ASM,2018,337,Oceania,24.0
+4,Andorra,AND,2018,69,Europe,176.0
+5,Angola,AGO,2018,93,Africa,156.5
+6,Anguilla,AIA,2018,307,North America,30.0
+7,Antigua and Barbuda,ATG,2018,321,North America,26.5
+8,Argentina,ARG,2018,186,South America,82.5
+9,Armenia,ARM,2018,131,Asia,120.0
+10,Aruba,ABW,2018,165,North America,95.5
+11,Australia,AUS,2018,167,Oceania,93.0
+12,Austria,AUT,2018,98,Europe,151.0
+13,Azerbaijan,AZE,2018,235,Asia,52.5
+14,Bahamas,BHS,2018,438,North America,11.0
+15,Bahrain,BHR,2018,234,Asia,54.0
+16,Bangladesh,BGD,2018,53,Asia,197.5
+17,Barbados,BRB,2018,300,North America,31.0
+18,Belarus,BLR,2018,364,Europe,22.0
+19,Belgium,BEL,2018,91,Europe,159.0
+20,Belize,BLZ,2018,356,North America,23.0
+21,Benin,BEN,2018,68,Africa,177.0
+22,Bermuda,BMU,2018,319,North America,28.0
+23,Bhutan,BTN,2018,145,Asia,107.5
+24,Bolivia,BOL,2018,156,South America,101.0
+25,Bosnia and Herzegovina,BIH,2018,73,Europe,173.5
+26,Bosnia and Herzegovina: Republika Srpska	,,2018,66,,179.5
+27,Botswana,BWA,2018,208,Africa,66.0
+28,Brazil,BRA,2018,323,South America,25.0
+29,British Virgin Islands,VGB,2018,470,North America,9.0
+30,Brunei,BRN,2018,134,Asia,116.5
+31,Bulgaria,BGR,2018,125,Europe,129.0
+32,Burkina Faso,BFA,2018,41,Africa,209.0
+33,Burundi,BDI,2018,84,Africa,162.0
+34,Cambodia,KHM,2018,176,Asia,89.0
+35,Cameroon,CMR,2018,121,Africa,130.5
+36,Canada,CAN,2018,114,North America,140.0
+37,Cape Verde,CPV,2018,298,Africa,32.0
+38,Cayman Islands,CYM,2018,393,North America,16.5
+39,Central African Republic,CAF,2018,16,Africa,220.0
+40,Chad,TCD,2018,59,Africa,191.0
+41,Chile,CHL,2018,230,South America,56.0
+42,China,CHN,2018,118,Asia,134.0
+43,Colombia,COL,2018,238,South America,49.0
+44,Comoros,COM,2018,23,Africa,219.0
+45,Congo,COG,2018,27,Africa,216.5
+46,Cook Islands,COK,2018,229,Oceania,57.0
+47,Costa Rica,CRI,2018,374,North America,20.0
+48,Cote d'Ivoire,CIV,2018,66,Africa,179.5
+49,Croatia,HRV,2018,78,Europe,168.5
+50,Cuba,CUB,2018,510,North America,6.0
+51,Curacao,CUW,2018,236,North America,50.5
+52,Cyprus,CYP,2018,83,Europe,163.0
+53,Czechia,CZE,2018,206,Europe,67.0
+54,Democratic Republic of Congo,COD,2018,29,Africa,215.0
+55,Denmark,DNK,2018,59,Europe,191.0
+56,Djibouti,DJI,2018,66,Africa,179.5
+57,Dominica,DMA,2018,289,North America,34.0
+58,Dominican Republic,DOM,2018,241,North America,48.0
+59,Ecuador,ECU,2018,222,South America,59.0
+60,Egypt,EGY,2018,116,Africa,137.0
+61,El Salvador,SLV,2018,605,North America,2.0
+62,England and Wales,,2018,140,,110.5
+63,Equatorial Guinea,GNQ,2018,63,Africa,186.5
+64,Estonia,EST,2018,197,Europe,74.0
+65,Eswatini,SWZ,2018,282,Africa,38.0
+66,Ethiopia,ETH,2018,127,Africa,125.0
+67,Faeroe Islands,FRO,2018,12,Europe,221.0
+68,Fiji,FJI,2018,158,Oceania,98.0
+69,Finland,FIN,2018,52,Europe,200.5
+70,France,FRA,2018,104,Europe,148.5
+71,French Guiana,GUF,2018,251,South America,47.0
+72,French Polynesia,PYF,2018,191,Oceania,80.0
+73,Gabon,GAB,2018,191,Africa,80.0
+74,Gambia,GMB,2018,58,Africa,193.5
+75,Georgia,GEO,2018,263,Asia,44.5
+76,Germany,DEU,2018,78,Europe,168.5
+77,Ghana,GHA,2018,50,Africa,203.0
+78,Gibraltar,GIB,2018,165,Europe,95.5
+79,Greece,GRC,2018,95,Europe,154.0
+80,Greenland,GRL,2018,225,North America,58.0
+81,Grenada,GRD,2018,435,North America,13.0
+82,Guadeloupe,GLP,2018,221,North America,60.0
+83,Guam,GUM,2018,404,Oceania,15.0
+84,Guatemala,GTM,2018,136,North America,115.0
+85,Guernsey,GGY,2018,138,Europe,112.5
+86,Guinea,GIN,2018,25,Africa,218.0
+87,Guinea-Bissau,GNB,2018,10,Africa,222.0
+88,Guyana,GUY,2018,283,South America,37.0
+89,Haiti,HTI,2018,96,North America,153.0
+90,Honduras,HND,2018,216,North America,63.0
+91,Hong Kong,HKG,2018,112,Asia,142.0
+92,Hungary,HUN,2018,184,Europe,84.0
+93,Iceland,ISL,2018,38,Europe,210.0
+94,India,IND,2018,33,Asia,213.5
+95,Indonesia,IDN,2018,93,Asia,156.5
+96,Iran,IRN,2018,284,Asia,36.0
+97,Iraq,IRQ,2018,126,Asia,127.5
+98,Ireland,IRL,2018,79,Europe,167.0
+99,Isle of Man,IMN,2018,108,Europe,146.0
+100,Israel,ISR,2018,236,Asia,50.5
+101,Italy,ITA,2018,97,Europe,152.0
+102,Jamaica,JAM,2018,138,North America,112.5
+103,Japan,JPN,2018,45,Asia,207.0
+104,Jersey,JEY,2018,133,Europe,118.5
+105,Jordan,JOR,2018,197,Asia,74.0
+106,Kazakhstan,KAZ,2018,186,Asia,82.5
+107,Kenya,KEN,2018,111,Africa,143.0
+108,Kiribati,KIR,2018,113,Oceania,141.0
+109,Kosovo,OWID_KOS,2018,106,Europe,147.0
+110,Kuwait,KWT,2018,157,Asia,99.5
+111,Kyrgyzstan,KGZ,2018,171,Asia,92.0
+112,Laos,LAO,2018,119,Asia,133.0
+113,Latvia,LVA,2018,218,Europe,62.0
+114,Lebanon,LBN,2018,126,Asia,127.5
+115,Lesotho,LSO,2018,92,Africa,158.0
+116,Liberia,LBR,2018,47,Africa,204.0
+117,Libya,LBY,2018,99,Africa,150.0
+118,Liechtenstein,LIE,2018,27,Europe,216.5
+119,Lithuania,LTU,2018,235,Europe,52.5
+120,Luxembourg,LUX,2018,115,Europe,138.5
+121,Macao,MAC,2018,203,Asia,69.0
+122,Madagascar,MDG,2018,82,Africa,164.0
+123,Malawi,MWI,2018,80,Africa,166.0
+124,Malaysia,MYS,2018,177,Asia,88.0
+125,Maldives,MDV,2018,499,Asia,7.0
+126,Mali,MLI,2018,33,Africa,213.5
+127,Malta,MLT,2018,133,Europe,118.5
+128,Marshall Islands,MHL,2018,66,Oceania,179.5
+129,Martinique,MTQ,2018,214,North America,65.0
+130,Mauritania,MRT,2018,46,Africa,205.5
+131,Mauritius,MUS,2018,194,Africa,76.5
+132,Mayotte,MYT,2018,117,Africa,135.5
+133,Mexico,MEX,2018,164,North America,97.0
+134,Micronesia (country),FSM,2018,127,Oceania,125.0
+135,Moldova,MDA,2018,215,Europe,64.0
+136,Monaco,MCO,2018,85,Europe,161.0
+137,Mongolia,MNG,2018,262,Asia,46.0
+138,Montenegro,MNE,2018,174,Europe,90.0
+139,Morocco,MAR,2018,232,Africa,55.0
+140,Mozambique,MOZ,2018,61,Africa,188.0
+141,Myanmar,MMR,2018,145,Asia,107.5
+142,Namibia,NAM,2018,295,Africa,33.0
+143,Nauru,NRU,2018,140,Oceania,110.5
+144,Nepal,NPL,2018,65,Asia,182.0
+145,Netherlands,NLD,2018,59,Europe,191.0
+146,New Caledonia,NCL,2018,200,Oceania,71.0
+147,New Zealand,NZL,2018,219,Oceania,61.0
+148,Nicaragua,NIC,2018,276,North America,41.0
+149,Niger,NER,2018,53,Africa,197.5
+150,Nigeria,NGA,2018,37,Africa,211.0
+151,North Macedonia,MKD,2018,134,Europe,116.5
+152,Northern Ireland,,2018,75,,171.0
+153,Northern Mariana Islands,MNP,2018,482,Oceania,8.0
+154,Norway,NOR,2018,74,Europe,172.0
+155,Oman,OMN,2018,36,Asia,212.0
+156,Pakistan,PAK,2018,43,Asia,208.0
+157,Palau,PLW,2018,373,Oceania,21.0
+158,Panama,PAN,2018,390,North America,18.0
+159,Papua New Guinea,PNG,2018,63,Oceania,186.5
+160,Paraguay,PRY,2018,199,South America,72.0
+161,Peru,PER,2018,269,South America,43.0
+162,Philippines,PHL,2018,172,Asia,91.0
+163,Poland,POL,2018,194,Europe,76.5
+164,Portugal,PRT,2018,127,Europe,125.0
+165,Puerto Rico,PRI,2018,313,North America,29.0
+166,Qatar,QAT,2018,53,Asia,197.5
+167,Reunion,REU,2018,129,Africa,121.5
+168,Romania,ROU,2018,115,Europe,138.5
+169,Russia,RUS,2018,405,Europe,14.0
+170,Rwanda,RWA,2018,464,Africa,10.0
+171,Saint Kitts and Nevis,KNA,2018,393,North America,16.5
+172,Saint Lucia,LCA,2018,279,North America,40.0
+173,Saint Vincent and the Grenadines,VCT,2018,378,North America,19.0
+174,Samoa,WSM,2018,204,Oceania,68.0
+175,Sao Tome and Principe,STP,2018,117,Africa,135.5
+176,Saudi Arabia,SAU,2018,197,Asia,74.0
+177,Scotland,,2018,143,,109.0
+178,Senegal,SEN,2018,76,Africa,170.0
+179,Serbia,SRB,2018,152,Europe,103.0
+180,Seychelles,SYC,2018,437,Africa,12.0
+181,Sierra Leone,SLE,2018,64,Africa,184.0
+182,Singapore,SGP,2018,201,Asia,70.0
+183,Sint Maarten (Dutch part),SXM,2018,153,North America,102.0
+184,Slovakia,SVK,2018,191,Europe,80.0
+185,Slovenia,SVN,2018,64,Europe,184.0
+186,Solomon Islands,SLB,2018,73,Oceania,173.5
+187,South Africa,ZAF,2018,280,Africa,39.0
+188,South Korea,KOR,2018,109,Asia,145.0
+189,South Sudan,SSD,2018,52,Africa,200.5
+190,Spain,ESP,2018,128,Europe,123.0
+191,Sri Lanka,LKA,2018,94,Asia,155.0
+192,Sudan,SDN,2018,46,Africa,205.5
+193,Suriname,SUR,2018,183,South America,85.0
+194,Sweden,SWE,2018,57,Europe,195.0
+195,Switzerland,CHE,2018,81,Europe,165.0
+196,Syria,SYR,2018,60,Asia,189.0
+197,Taiwan,TWN,2018,263,Asia,44.5
+198,Tajikistan,TJK,2018,121,Asia,130.5
+199,Tanzania,TZA,2018,58,Africa,193.5
+200,Thailand,THA,2018,520,Asia,5.0
+201,Timor,TLS,2018,51,Asia,202.0
+202,Togo,TGO,2018,64,Africa,184.0
+203,Tonga,TON,2018,166,Oceania,94.0
+204,Trinidad and Tobago,TTO,2018,270,North America,42.0
+205,Tunisia,TUN,2018,180,Africa,86.0
+206,Turkey,TUR,2018,287,Asia,35.0
+207,Turkmenistan,TKM,2018,552,Asia,3.0
+208,Tuvalu,TUV,2018,110,Oceania,144.0
+209,Uganda,UGA,2018,129,Africa,121.5
+210,Ukraine,UKR,2018,157,Europe,99.5
+211,United Arab Emirates,ARE,2018,104,Asia,148.5
+212,United States,USA,2018,655,North America,1.0
+213,United States Virgin Islands,VIR,2018,542,North America,4.0
+214,Uruguay,URY,2018,321,South America,26.5
+215,Uzbekistan,UZB,2018,150,Asia,104.0
+216,Vanuatu,VUT,2018,71,Oceania,175.0
+217,Venezuela,VEN,2018,178,South America,87.0
+218,Vietnam,VNM,2018,137,Asia,114.0
+219,Yemen,YEM,2018,53,Asia,197.5
+220,Zambia,ZMB,2018,146,Africa,105.5
+221,Zimbabwe,ZWE,2018,120,Africa,132.0
