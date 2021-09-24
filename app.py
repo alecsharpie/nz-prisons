@@ -102,10 +102,10 @@ def prisons():
                     {row['phone']}""")
         st.write(f"Established: {row['opened']}")
 
-        columns = st.columns(3)
+        columns = st.columns([1, 3, 1])
 
         columns[0].image('images/' + row['image'])
-        columns[1].map(row)
+        columns[1].map(pd.DataFrame({'lat':[row['lat']], 'lon':[row['lon']]}))
         columns[2].write(
             f"{row['total_prisoners']} {row['gender']} Prisoners\n and {row['staff']} Staff"
         )
