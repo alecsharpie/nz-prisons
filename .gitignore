@@ -5,3 +5,4 @@ notebooks/
 testing
 *.pyc
 __pycache__/
+data/backup/
