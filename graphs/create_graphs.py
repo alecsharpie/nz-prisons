@@ -20,36 +20,36 @@ def rate_graph():
                marker='o',
                linewidth=0,
                markersize=4)
-    ax[0].plot([1, 61, 222], [0, 0, 0],
+    ax[0].plot([1, 161, 222], [0, 0, 0],
                color='#033553',
                marker='o',
                linewidth=0,
                markersize=6)
-    ax[0].plot([1, 61, 222], [0, 0, 0],
+    ax[0].plot([1, 161, 222], [0, 0, 0],
                color='white',
                marker='o',
                linewidth=0,
                markersize=4)
-    ax[0].annotate(text='NZ',
-                   xy=(61, 0),
+    ax[0].annotate(text='61st highest imprisonment rate\n\nNZ',
+                   xy=(161, 0),
                    fontsize=13,
-                   xytext=(53, 0.003),
+                   xytext=(154, 0.003),
                    arrowprops={
                        'arrowstyle': "->",
                        'color': 'grey'
                    })
-    ax[0].annotate(text='Guinea-Bissau',
-                   xy=(222, 0),
-                   fontsize=10,
-                   xytext=(202, 0.003),
-                   arrowprops={
-                       'arrowstyle': "->",
-                       'color': 'grey'
-                   })
-    ax[0].annotate(text='United States',
+    ax[0].annotate(text='Lowest imprisonment rate\n\nGuinea-Bissau',
                    xy=(1, 0),
                    fontsize=10,
                    xytext=(-19, 0.003),
+                   arrowprops={
+                       'arrowstyle': "->",
+                       'color': 'grey'
+                   })
+    ax[0].annotate(text='Highest imprisonment rate\n\nUnited States',
+                   xy=(222, 0),
+                   fontsize=10,
+                   xytext=(202, 0.003),
                    arrowprops={
                        'arrowstyle': "->",
                        'color': 'grey'
