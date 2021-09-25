@@ -148,10 +148,15 @@ def references():
     pass
 
 
+def resources():
+    pass
+
+
 # call app class object
 app = MultiPage()
 # Add pages
 app.add_page("Prisoners",home)
 app.add_page("Prisons",prisons)
+app.add_page("Resources", resources)
 app.add_page("References",references)
 app.run()
