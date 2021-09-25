@@ -29,6 +29,10 @@ def home():
     demo[0].pyplot(demo_graph())
 
     demo[1].write("""
+        Thankfully the number of young people in prison have droppping significantly in the last 20 years.
+        """)
+
+    demo[1].write("""
 
         """)
 
@@ -40,8 +44,8 @@ def home():
     rate[0].pyplot(rate_graph())
 
     rate[1].write("""
-        If you line up all the countries by prisoners per capita
-        and split them into three equal sized groups,
+        If you line up all the countries by prisoners per capita, NZ is 61st from the top.
+        To help visualize its position, imagine countries in 3 equal sized groups,
         New Zealand's group imprisons people at the highest rate.
         [ref1] [ref2]
         """)
