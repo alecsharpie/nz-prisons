@@ -30,7 +30,11 @@ def rate_graph():
                marker='o',
                linewidth=0,
                markersize=4)
-    ax[0].annotate(text='61st highest imprisonment rate\n\nNZ',
+    ax[0].annotate(text='61st highest imprisonment rate',
+                   xy=(85, 0),
+                   fontsize=13,
+                   xytext=(85, 0.006))
+    ax[0].annotate(text='NZ',
                    xy=(161, 0),
                    fontsize=13,
                    xytext=(154, 0.003),
