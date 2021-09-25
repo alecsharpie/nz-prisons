@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from graphs.utils import prep_demo_data, get_year_ticks
+
 def rate_graph():
 
     pop_df = pd.read_csv('data/imprisonment_per_population.csv')
@@ -93,5 +95,47 @@ def drugs_graph():
     plt.xlabel('Year')
     plt.ylabel('Number of Offences')
     sns.despine()
+
+    return fig
+
+def demo_graph():
+    fig, ax = plt.subplots(3, 1, figsize=(8, 12))
+
+    age_df = prep_demo_data('age')
+    sns.set_style("ticks")
+    sns.set_palette("dark")
+    sns.barplot(x = 'year', y = 'cumsum', data = age_df, hue = 'age', dodge = False, palette = 'colorblind', ci = None, ax = ax[0])
+    sns.despine(ax = ax[0])
+    ax[0].legend(loc = 'lower left', framealpha = 0.9)
+    ax[0].set_ylim((0, 100))
+    ax[0].set_title('Age', loc = 'left', fontsize = 14)
+    ax[0].set_ylabel('% of Total Prisoner Population')
+    ax[0].set_xlabel('Year')
+    ax[0].set_xticks(range(len(list(age_df.year.unique()))))
+    ax[0].set_xticklabels(get_year_ticks())
+
+    gender_df = prep_demo_data('gender')
+    sns.barplot(x = 'year', y = 'cumsum', data = gender_df, hue = 'gender', dodge = False, palette = 'colorblind', ci = None, ax = ax[1])
+    sns.despine(ax = ax[1])
+    ax[1].legend(loc = 'lower left', framealpha = 0.9)
+    ax[1].set_ylim((0, 100))
+    ax[1].set_title('Gender', loc = 'left', fontsize = 14)
+    ax[1].set_ylabel('% of Total Prisoner Population')
+    ax[1].set_xlabel('Year')
+    ax[1].set_xticks(range(len(list(gender_df.year.unique()))))
+    ax[1].set_xticklabels(get_year_ticks())
+
+    eth_df = prep_demo_data('ethnicity')
+    sns.barplot(x = 'year', y = 'cumsum', data = eth_df, hue = 'ethnicity', dodge = False, palette = 'colorblind', ci = None, ax = ax[2])
+    sns.despine(ax = ax[2])
+    ax[2].legend(loc = 'lower left', framealpha = 0.9)
+    ax[2].set_ylim((0, 100))
+    ax[2].set_title('Ethnicity', loc = 'left', fontsize = 14)
+    ax[2].set_ylabel('% of Total Prisoner Population')
+    ax[2].set_xlabel('Year')
+    ax[2].set_xticks(range(len(list(eth_df.year.unique()))))
+    ax[2].set_xticklabels(get_year_ticks())
+
+    plt.tight_layout()
 
     return fig
