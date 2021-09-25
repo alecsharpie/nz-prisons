@@ -29,10 +29,7 @@ def home():
     demo[0].pyplot(demo_graph())
 
     demo[1].write("""
-        If you line up all the countries by prisoners per capita
-        and split them into three equal sized groups,
-        New Zealand's group imprisons people at the highest rate.
-        [ref1] [ref2]
+
         """)
 
     st.markdown('''
