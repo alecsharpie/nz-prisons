@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 from streamlit_pages.streamlit_pages import MultiPage
-from graphs.create_graphs import rate_graph, drugs_graph
+from graphs.create_graphs import rate_graph, drugs_graph, demo_graph
 
 st.set_page_config(
     page_title="NZ's Prisons",
@@ -24,6 +24,16 @@ def home():
     st.markdown('''
                 ### Demographics
                 ''')
+    demo = st.columns([2, 1])
+
+    demo[0].pyplot(demo_graph())
+
+    demo[1].write("""
+        If you line up all the countries by prisoners per capita
+        and split them into three equal sized groups,
+        New Zealand's group imprisons people at the highest rate.
+        [ref1] [ref2]
+        """)
 
     st.markdown('''
                 ### Prisoners per Capita
