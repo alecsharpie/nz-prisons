@@ -32,9 +32,21 @@ def home():
         Thankfully the number of young people in prison have droppping significantly in the last 20 years.
         """)
 
-    demo[1].write("""
+    demo[1].markdown("""
+        <br>
+        <br>
+        Men have always made up 80-90 percent of prisoners. [ref3]
+        """,
+                     unsafe_allow_html=True)
 
-        """)
+    demo[1].markdown("""
+        <br>
+        <br>
+        The proportion of convictions of Maori people has been increaing steadily for 40 years.
+        Maori people account for 53% of NZ's prisoners but only 17% of national population.
+        1 in 174 Maori in NZ are in prison, compared with 1 in 996 Non-Maori, and 1 in 1300 Pakeha.
+        """,
+                     unsafe_allow_html=True)
 
     st.markdown('''
                 ### Prisoners per Capita
