@@ -29,22 +29,23 @@ def home():
     demo[0].pyplot(demo_graph())
 
     demo[1].write("""
-        Thankfully the number of young people in prison have droppping significantly in the last 20 years.
+        Thankfully the number of young people in prison have droppping significantly in the last 15 years. [ref1]
         """)
 
     demo[1].markdown("""
         <br>
         <br>
-        Men have always made up 80-90 percent of prisoners. [ref3]
+        Men have always made up 80-90 percent of prisoners. [ref1]
         """,
                      unsafe_allow_html=True)
 
     demo[1].markdown("""
         <br>
         <br>
-        The proportion of convictions of Maori people has been increaing steadily for 40 years.
-        Maori people account for 53% of NZ's prisoners but only 17% of national population.
-        1 in 174 Maori in NZ are in prison, compared with 1 in 996 Non-Maori, and 1 in 1300 Pakeha.
+        The proportion of convictions of Maori people has been increaing steadily for 40 years. [ref1]
+        Maori people account for 53% of NZ's prisoners but only 17% of national population. [ref2] [ref3]
+
+        1 in 174 Maori in NZ are in prison, compared with 1 in 996 Non-Maori, and 1 in 1300 Pakeha. [ref3]
         """,
                      unsafe_allow_html=True)
 
@@ -59,10 +60,10 @@ def home():
         If you line up all the countries by prisoners per capita, NZ is 61st from the top.
         To help visualize its position, imagine countries in 3 equal sized groups,
         New Zealand's group imprisons people at the highest rate.
-        [ref1] [ref2]
+        [ref4]
         """)
     rate[1].write("""
-        The USA has the highest imprisonment rate, while Guinea-Bissau has the lowest.
+        The USA has the highest imprisonment rate, while Guinea-Bissau has the lowest. [ref4]
                   """)
     st.markdown("""---""")
 
@@ -77,6 +78,24 @@ def home():
         [ref1] [ref2]
         """)
     st.markdown("""---""")
+    st.markdown("""
+                ## References
+                """)
+    st.markdown("""
+                #### [ref1]
+                NZ, Dept of Justice, Research & data
+                [https://www.justice.govt.nz/justice-sector-policy/research-data/justice-statistics/data-tables/](https://www.justice.govt.nz/justice-sector-policy/research-data/justice-statistics/data-tables/)
+                """)
+    st.markdown("""
+                #### [ref2]
+
+
+                """)
+    st.markdown("""
+                #### [ref3]
+
+
+                """)
 
 
 def prisons():
@@ -157,9 +176,6 @@ def prisons():
 
         st.markdown("""---""")
 
-def references():
-    pass
-
 
 def resources():
     pass
@@ -171,5 +187,4 @@ app = MultiPage()
 app.add_page("Prisoners",home)
 app.add_page("Prisons",prisons)
 app.add_page("Resources", resources)
-app.add_page("References",references)
 app.run()
