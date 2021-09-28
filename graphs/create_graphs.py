@@ -9,9 +9,13 @@ def rate_graph():
 
     pop_df = pd.read_csv('data/imprisonment_per_population.csv')
 
+    #sns.set_style("ticks")
+    #sns.set_palette('colorblind')
+
+    pal1 = sns.color_palette("colorblind", 6)
+    sns.set_palette(pal1)
+
     fig, ax = plt.subplots(2, 1, figsize=(8, 6))
-    sns.set_style("ticks")
-    sns.set_palette('colorblind')
 
     ax[0].plot([0, 222], [0, 0], color='#033553', linewidth=3)
     ax[0].plot([0, 222], [0.00005, 0.00005], color='white', linewidth=1)
@@ -90,10 +94,14 @@ def drugs_graph():
 
     conviction_count = pd.read_csv('data/drug_conviction_count.csv')
 
+    #sns.set_style("ticks")
+    #sns.set_palette('colorblind')
+
+    pal1 = sns.color_palette("colorblind", 6)
+    sns.set_palette(pal1)
 
     fig, ax = plt.subplots(figsize=(8, 6))
-    sns.set_style("ticks")
-    sns.set_palette('colorblind')
+
     sns.lineplot(data=conviction_count, hue='drug', x='year', y='count', ax=ax)
     plt.legend(title='Drug')
     plt.xlabel('Year')
@@ -103,11 +111,17 @@ def drugs_graph():
     return fig
 
 def demo_graph():
-    fig, ax = plt.subplots(3, 1, figsize=(8, 12))
 
     age_df = prep_demo_data('age')
-    sns.set_style("ticks")
-    sns.set_palette("dark")
+
+    #sns.set_style("ticks")
+    #sns.set_palette("colorblind")
+
+    pal1 = sns.color_palette("colorblind", 6)
+    sns.set_palette(pal1)
+
+    fig, ax = plt.subplots(3, 1, figsize=(8, 12))
+
     sns.barplot(x = 'year', y = 'cumsum', data = age_df, hue = 'age', dodge = False, palette = 'colorblind', ci = None, ax = ax[0])
     sns.despine(ax = ax[0])
     ax[0].legend(loc = 'lower left', framealpha = 0.9)
