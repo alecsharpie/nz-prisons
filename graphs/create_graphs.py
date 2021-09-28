@@ -3,7 +3,23 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from graphs.utils import prep_demo_data, get_year_ticks
+from graphs.utils import get_demo_data, get_year_ticks
+
+def conv_rate_graph():
+
+    cvc_df = pd.read_csv('data/conviction_rates')
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.set_style("ticks")
+    sns.set_palette('colorblind')
+    sns.lineplot(data = cvc_df, x = 'year', y = 'rate', hue = 'ethnicity')
+    plt.legend(title='Drug')
+    plt.xlabel('Year')
+    plt.ylabel('Conviction rate if charged (%)')
+    sns.despine()
+
+    return fig
+
 
 def rate_graph():
 
@@ -112,13 +128,13 @@ def drugs_graph():
 
 def demo_graph():
 
-    age_df = prep_demo_data('age')
+    age_df = get_demo_data('age')
 
     #sns.set_style("ticks")
     #sns.set_palette("colorblind")
 
-    pal1 = sns.color_palette("colorblind", 6)
-    sns.set_palette(pal1)
+    #pal1 = sns.color_palette("colorblind", 6)
+    #sns.set_palette(pal1)
 
     fig, ax = plt.subplots(3, 1, figsize=(8, 12))
 
@@ -132,7 +148,7 @@ def demo_graph():
     ax[0].set_xticks(range(len(list(age_df.year.unique()))))
     ax[0].set_xticklabels(get_year_ticks())
 
-    gender_df = prep_demo_data('gender')
+    gender_df = get_demo_data('gender')
     sns.barplot(x = 'year', y = 'cumsum', data = gender_df, hue = 'gender', dodge = False, palette = 'colorblind', ci = None, ax = ax[1])
     sns.despine(ax = ax[1])
     ax[1].legend(loc = 'lower left', framealpha = 0.9)
@@ -143,7 +159,7 @@ def demo_graph():
     ax[1].set_xticks(range(len(list(gender_df.year.unique()))))
     ax[1].set_xticklabels(get_year_ticks())
 
-    eth_df = prep_demo_data('ethnicity')
+    eth_df = get_demo_data('ethnicity')
     sns.barplot(x = 'year', y = 'cumsum', data = eth_df, hue = 'ethnicity', dodge = False, palette = 'colorblind', ci = None, ax = ax[2])
     sns.despine(ax = ax[2])
     ax[2].legend(loc = 'lower left', framealpha = 0.9)

@@ -9,18 +9,29 @@ import numpy as np
 import pandas as pd
 
 from streamlit_pages.streamlit_pages import MultiPage
-from graphs.create_graphs import rate_graph, drugs_graph, demo_graph
+from graphs.create_graphs import rate_graph, drugs_graph, demo_graph, conv_rate_graph
 
 st.set_page_config(
     page_title="NZ's Prisons",
     page_icon="🔑",
     layout="wide")
 
-
 def home():
     st.write("Who are our prisoners?")
 
     st.write("We employ 6400 people to hold 8400 people captive")
+    st.markdown('''
+                ### Conviction rate inequality
+                ''')
+    demo = st.columns([2, 1])
+
+    demo[0].pyplot(conv_rate_graph())
+
+    demo[1].markdown("""
+
+        """)
+
+    st.markdown("---")
     st.markdown('''
                 ### Demographics
                 ''')
@@ -28,7 +39,7 @@ def home():
 
     demo[0].pyplot(demo_graph())
 
-    demo[1].write("""
+    demo[1].markdown("""
         Thankfully the number of young people in prison have droppping significantly in the last 15 years. [ref1]
         """)
 
@@ -37,17 +48,23 @@ def home():
         <br>
         Men have always made up 80-90 percent of prisoners. [ref1]
         """,
-                     unsafe_allow_html=True)
+        unsafe_allow_html=True)
 
     demo[1].markdown("""
         <br>
         <br>
         The proportion of convictions of Maori people has been increaing steadily for 40 years. [ref1]
         Maori people account for 53% of NZ's prisoners but only 17% of national population. [ref2] [ref3]
+        """,
+        unsafe_allow_html=True)
 
+    demo[1].markdown("""
+        <br>
+        <br>
         1 in 174 Maori in NZ are in prison, compared with 1 in 996 Non-Maori, and 1 in 1300 Pakeha. [ref3]
         """,
-                     unsafe_allow_html=True)
+        unsafe_allow_html=True)
+    st.markdown('---')
 
     st.markdown('''
                 ### Prisoners per Capita
@@ -78,19 +95,24 @@ def home():
         [ref1] [ref2]
         """)
     st.markdown("""---""")
+
     st.markdown("""
                 ## References
                 """)
+
     st.markdown("""
                 #### [ref1]
-                NZ, Dept of Justice, Research & data
+                NZ, Dept of Justice, Research & data <br>
                 [https://www.justice.govt.nz/justice-sector-policy/research-data/justice-statistics/data-tables/](https://www.justice.govt.nz/justice-sector-policy/research-data/justice-statistics/data-tables/)
-                """)
+                """,
+                unsafe_allow_html=True)
+
     st.markdown("""
                 #### [ref2]
 
 
                 """)
+
     st.markdown("""
                 #### [ref3]
 
@@ -184,7 +206,7 @@ def resources():
 # call app class object
 app = MultiPage()
 # Add pages
-app.add_page("Prisoners",home)
-app.add_page("Prisons",prisons)
+app.add_page("Prisoners", home)
+app.add_page("Prisons", prisons)
 app.add_page("Resources", resources)
 app.run()

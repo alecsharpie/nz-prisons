@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-def prep_demo_data(col):
+def get_demo_data(col):
 
     df = pd.read_csv(f'data/{col}.csv')
 
