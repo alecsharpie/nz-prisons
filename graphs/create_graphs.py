@@ -173,3 +173,21 @@ def demo_graph():
     plt.tight_layout()
 
     return fig
+
+def staff_graph():
+    svp = pd.read_csv("data/staff_v_prisoner.csv")
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.set_style("ticks")
+    sns.set_palette('colorblind')
+    sns.barplot(data=svp,
+                y='role',
+                x='cumsum',
+                hue='ethnicity',
+                palette='colorblind',
+                dodge=False,
+                ax=ax)
+    plt.legend(title='Drug')
+    plt.xlabel('Year')
+    plt.ylabel('Conviction rate if charged (%)')
+    sns.despine()
+    return fig

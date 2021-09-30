@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 from streamlit_pages.streamlit_pages import MultiPage
-from graphs.create_graphs import rate_graph, drugs_graph, demo_graph, conv_rate_graph
+from graphs.create_graphs import rate_graph, drugs_graph, demo_graph, conv_rate_graph, staff_graph
 
 st.set_page_config(
     page_title="NZ's Prisons",
@@ -29,6 +29,18 @@ def home():
 
     demo[1].markdown("""
 
+        """)
+
+    st.markdown("---")
+    st.markdown('''
+                ### Staff v Prisoners
+                ''')
+    demo = st.columns([2, 1])
+
+    demo[0].pyplot(staff_graph())
+
+    demo[1].markdown("""
+                ref[2]
         """)
 
     st.markdown("---")
@@ -109,8 +121,8 @@ def home():
 
     st.markdown("""
                 #### [ref2]
-
-
+                Dept of Corrections, Annual Report, 1 July 2019 – 30 June 2020 <br>
+                [https://www.corrections.govt.nz/__data/assets/pdf_file/0018/42273/Annual_Report_2019_2020.pdf](https://www.corrections.govt.nz/__data/assets/pdf_file/0018/42273/Annual_Report_2019_2020.pdf)
                 """)
 
     st.markdown("""

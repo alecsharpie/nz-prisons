@@ -1,5 +1,9 @@
-ethnicity,staff,prisoner
-European,69.5,30.2
-Māori,21.3,53.1
-Pacific peoples,12.5,11.5
-Other,12.2,5.2
+,ethnicity,role,pct,cumsum
+7,Other,prisoner,5.2,100.0
+5,Pacific peoples,prisoner,11.5,94.8
+3,Māori,prisoner,53.1,83.3
+1,European,prisoner,30.2,30.2
+6,Other,staff,12.2,115.5
+4,Pacific peoples,staff,12.5,103.3
+2,Māori,staff,21.3,90.8
+0,European,staff,69.5,69.5
