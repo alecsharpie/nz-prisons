@@ -175,11 +175,11 @@ def demo_graph():
     return fig
 
 def staff_graph():
-    svp = pd.read_csv("data/staff_v_prisoner.csv")
+    svp_df = pd.read_csv("data/staff_v_prisoner.csv")
     fig, ax = plt.subplots(figsize=(8, 6))
     sns.set_style("ticks")
     sns.set_palette('colorblind')
-    sns.barplot(data=svp,
+    sns.barplot(data=svp_df,
                 y='role',
                 x='cumsum',
                 hue='ethnicity',
@@ -190,4 +190,17 @@ def staff_graph():
     plt.xlabel('Year')
     plt.ylabel('Conviction rate if charged (%)')
     sns.despine()
+    return fig
+
+
+def reimprisonment_graph():
+    reimp_df = pd.read_csv('data/reimprisonment.csv').set_index('sentence_length')
+
+    fig, ax = plt.subplots(figsize=(8, 6))
+    sns.set_style("ticks")
+    sns.set_palette('colorblind')
+    ax = sns.heatmap(reimp_df, linewidth=0.5, cmap = 'OrRd', cbar_kws={'label': '% Reimprisonment'})
+    plt.yticks(rotation=0)
+    plt.xlabel('Months since release')
+    plt.ylabel('Previous sentence length')
     return fig
