@@ -9,7 +9,8 @@ import numpy as np
 import pandas as pd
 
 from streamlit_pages.streamlit_pages import MultiPage
-from graphs.create_graphs import rate_graph, drugs_graph, demo_graph, conv_rate_graph, staff_graph
+from graphs.create_graphs \
+    import rate_graph, drugs_graph, demo_graph, conv_rate_graph, staff_graph, reimprisonment_graph
 
 st.set_page_config(
     page_title="NZ's Prisons",
@@ -17,33 +18,57 @@ st.set_page_config(
     layout="wide")
 
 def home():
-    st.write("Who are our prisoners?")
+    #st.markdown('''
+    #            ### Overview of NZ's Prison System
+    #            ''')
 
-    st.write("We employ 6400 people to hold 8400 people captive")
+    info = st.columns([2, 1])
+
+    info[0].markdown("""
+                Created by [Alec Sharp](https://www.alecsharpie.me/), October 2021.
+                <br>
+                """,
+                     unsafe_allow_html=True)
+
+    info[0].markdown("""
+                There are 18 Prisons in New Zealand.
+
+                One prison, Auckland South Corrections Facility (Kohuora), is privately run by Serco. They manage over 500 prisons internationally. [ref2] <br>
+                The other 17 are run by NZ Government's Department of Corrections. [ref3]
+
+                """,
+                unsafe_allow_html=True)
+
+    info[1].markdown("""Glossary""")
+
+    info[1].markdown("""
+                <b>Charge</b> - Accusing someone of an offence.
+                <br>
+                <br>
+                <b>Convict</b> - Declaring someone guilty of an offence.
+                """,
+                     unsafe_allow_html=True)
+
+    info[1].markdown("""---""")
+
     st.markdown('''
-                ### Conviction rate inequality
+                ### Number of prisoners per Capita
                 ''')
-    demo = st.columns([2, 1])
+    rate = st.columns([2, 1])
 
-    demo[0].pyplot(conv_rate_graph())
+    rate[0].pyplot(rate_graph())
 
-    demo[1].markdown("""
-
+    rate[1].write("""
+        If you line up all the countries by number of prisoners per capita, NZ is 61st from the top.
+        To help visualize its position, imagine countries in 3 equal sized groups,
+        New Zealand's group imprisons people at the highest rate.
+        [ref4] [ref5]
         """)
+    rate[1].write("""
+        The USA has the highest imprisonment rate, while Guinea-Bissau has the lowest. [ref4]
+                  """)
+    st.markdown("""---""")
 
-    st.markdown("---")
-    st.markdown('''
-                ### Staff v Prisoners
-                ''')
-    demo = st.columns([2, 1])
-
-    demo[0].pyplot(staff_graph())
-
-    demo[1].markdown("""
-                ref[2]
-        """)
-
-    st.markdown("---")
     st.markdown('''
                 ### Demographics
                 ''')
@@ -52,7 +77,7 @@ def home():
     demo[0].pyplot(demo_graph())
 
     demo[1].markdown("""
-        Thankfully the number of young people in prison have droppping significantly in the last 15 years. [ref1]
+        Thankfully the proportion of young people being convicted of crimes has dropped significantly in the last 15 years. [ref1]
         """)
 
     demo[1].markdown("""
@@ -60,41 +85,40 @@ def home():
         <br>
         Men have always made up 80-90 percent of prisoners. [ref1]
         """,
-        unsafe_allow_html=True)
+                     unsafe_allow_html=True)
 
     demo[1].markdown("""
         <br>
         <br>
         The proportion of convictions of Maori people has been increaing steadily for 40 years. [ref1]
-        Maori people account for 53% of NZ's prisoners but only 17% of national population. [ref2] [ref3]
-        """,
-        unsafe_allow_html=True)
-
-    demo[1].markdown("""
-        <br>
-        <br>
-        1 in 174 Maori in NZ are in prison, compared with 1 in 996 Non-Maori, and 1 in 1300 Pakeha. [ref3]
         """,
         unsafe_allow_html=True)
     st.markdown('---')
 
     st.markdown('''
-                ### Prisoners per Capita
+                ### Conviction rate inequality
                 ''')
-    rate = st.columns([2, 1])
+    demo = st.columns([2, 1])
 
-    rate[0].pyplot(rate_graph())
+    demo[0].pyplot(conv_rate_graph())
 
-    rate[1].write("""
-        If you line up all the countries by prisoners per capita, NZ is 61st from the top.
-        To help visualize its position, imagine countries in 3 equal sized groups,
-        New Zealand's group imprisons people at the highest rate.
-        [ref4]
-        """)
-    rate[1].write("""
-        The USA has the highest imprisonment rate, while Guinea-Bissau has the lowest. [ref4]
-                  """)
-    st.markdown("""---""")
+    demo[1].markdown("""
+        For the last 30 years Maori have had a higher conviction rate than any other ethnic group. Conviction rate is the percentage of people who have been convicted of the crime they were charged with. [ref1]
+        """,
+        unsafe_allow_html=True)
+
+    demo[1].markdown("""
+        Maori people account for 53% of NZ's prisoners but only 17% of national population. [ref6] [ref7]
+        This means <b>1 in 174 Maori in NZ are in prison<b>, compared with 1 in 996 Non-Maori, and 1 in 1300 Pakeha.
+        """,
+        unsafe_allow_html = True)
+
+    demo[1].markdown("""
+        Asian people have
+        """,
+        unsafe_allow_html=True)
+
+    st.markdown("---")
 
     st.markdown('''
                 ### Drug Offences
@@ -104,9 +128,45 @@ def home():
     drugs[1].write("""
         Cannabis and Meth are by far the biggest contributors to drug convictions in NZ.
         Multiple studies show Methamphetamine causing ~3x as much harm to self than Cannabis.
-        [ref1] [ref2]
+        [ref1] [ref8] [ref9]
         """)
     st.markdown("""---""")
+
+    st.markdown('''
+                ### Costs
+                ''')
+
+    col1, col2, col3 = st.columns(3)
+    col1.metric("Prisoners", "8397")
+    col2.metric("Daily Cost of a Prisoner", "$385")
+    st.markdown('---')
+
+    st.markdown('''
+                ### Staff
+                ''')
+    demo = st.columns([2, 1])
+
+    demo[0].pyplot(staff_graph())
+
+    demo[1].markdown("""
+                Having prisoners is expensive, we employ 6400 staff to hold 8400 people captive in prison. [ref3]
+
+        """)
+
+    st.markdown("---")
+
+    st.markdown('''
+                ### Re-imprisonment
+                ''')
+    demo = st.columns([2, 1])
+
+    demo[0].pyplot(reimprisonment_graph())
+
+    demo[1].markdown("""
+                Upskill Rates 0.6% ref[2]
+        """)
+
+    st.markdown("---")
 
     st.markdown("""
                 ## References
@@ -121,15 +181,73 @@ def home():
 
     st.markdown("""
                 #### [ref2]
-                Dept of Corrections, Annual Report, 1 July 2019 – 30 June 2020 <br>
-                [https://www.corrections.govt.nz/__data/assets/pdf_file/0018/42273/Annual_Report_2019_2020.pdf](https://www.corrections.govt.nz/__data/assets/pdf_file/0018/42273/Annual_Report_2019_2020.pdf)
-                """)
+                Serco, Information about Auckland South Corrections Facility (Kohuora). <br>
+                [https://www.serco.com/aspac/sector-expertise/justice/information-for-friends-and-family/auckland-south-corrections-facility](https://www.serco.com/aspac/sector-expertise/justice/information-for-friends-and-family/auckland-south-corrections-facility)
+                """,
+                unsafe_allow_html=True)
 
     st.markdown("""
                 #### [ref3]
+                Dept of Corrections, Annual Report, 1 July 2019 – 30 June 2020 <br>
+                [https://www.corrections.govt.nz/resources/strategic_reports/annual-reports/annual_report_2019_2020](https://www.corrections.govt.nz/resources/strategic_reports/annual-reports/annual_report_2019_2020)
+                """,
+                unsafe_allow_html=True)
+
+    st.markdown("""
+                #### [ref4]
+                Our World in Data, Incarceration rate in different countries, Dataset <br>
+                [https://ourworldindata.org/grapher/prison-population-rate](https://ourworldindata.org/grapher/prison-population-rate)
+                """,
+                unsafe_allow_html=True)
+
+    st.markdown("""
+                #### [ref5]
+                Our World in Data, Countries and their continents, Dataset <br>
+                [https://ourworldindata.org/world-region-map-definitions](https://ourworldindata.org/world-region-map-definitions)
+                """,
+                unsafe_allow_html=True)
+
+    st.markdown("""
+                #### [ref6]
+                Dpet of Corrections, Prison stats June 2021 <br>
+                [https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_stats_june_2021#ethnicity](https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_stats_june_2021#ethnicity)
+
+                """,
+                unsafe_allow_html=True)
+
+    st.markdown("""
+                #### [ref7]
+                Wikipedia, Demographics of New Zealand <br>
+                [https://en.wikipedia.org/wiki/Demographics_of_New_Zealand](https://en.wikipedia.org/wiki/Demographics_of_New_Zealand)
+                """,
+                unsafe_allow_html=True)
+
+    st.markdown("""
+                #### [ref8]
+                Bonomo, Y. et al. “The Australian drug harms ranking study.” Journal of Psychopharmacology 33 (2019): 759 - 768. <br>
+                [https://www.semanticscholar.org/paper/The-Australian-drug-harms-ranking-study-Bonomo-Norman/dd362c87c7340d759c8d114ea6b64232dcff9a71](https://www.semanticscholar.org/paper/The-Australian-drug-harms-ranking-study-Bonomo-Norman/dd362c87c7340d759c8d114ea6b64232dcff9a71)""",
+                unsafe_allow_html=True)
+
+    st.markdown("""
+                #### [ref9]
+                Nutt, David J., Leslie A. King, and Lawrence D. Phillips. "Drug harms in the UK: a multicriteria decision analysis." The Lancet 376.9752 (2010): 1558-1565. <br>
+                [https://www.sciencedirect.com/science/article/pii/S0140673610614626?casa_token=Jcs457yUpbgAAAAA:xklnbRrus2NVRzlUBibsYXh_FdbE1RijoWCLSZsekJx-TeL8_UCI1geeP035TOyqkVTeze86Eps](https://www.sciencedirect.com/science/article/pii/S0140673610614626?casa_token=Jcs457yUpbgAAAAA:xklnbRrus2NVRzlUBibsYXh_FdbE1RijoWCLSZsekJx-TeL8_UCI1geeP035TOyqkVTeze86Eps)
+                """,
+                unsafe_allow_html=True)
 
 
-                """)
+
+
+
+
+
+
+    st.markdown("""
+                #### [ref4]
+
+                []()
+                """,
+                unsafe_allow_html=True)
 
 
 def prisons():
