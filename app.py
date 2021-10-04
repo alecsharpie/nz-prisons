@@ -51,7 +51,7 @@ def home():
     rate[0].pyplot(rate_graph())
 
     rate[1].write("""
-        If you line up all the countries by number of prisoners per capita, NZ is 61st from the top.
+        If you line up all the countries by prisoners per capita, NZ is 61st from the top.
         To help visualize its position, imagine countries in 3 equal sized groups,
         New Zealand's group imprisons people at the highest rate.
         <a href="#ref4"><i>[4]</i></a> <a href="#ref5"><i>[5]</i></a>
@@ -64,7 +64,7 @@ def home():
     st.markdown("""---""")
 
     st.markdown('''
-                ## Who are the people being convivted of crimes?
+                ## Who are the people being convicted of crimes?
                 ''')
     demo = st.columns([2, 1])
 
@@ -106,7 +106,7 @@ def home():
                      unsafe_allow_html=True)
 
     demo[1].markdown("""
-        Asian people have a much lower conviction rate than any other ethnicity.<a href="#ref1"><i>[1]</i></a>
+        Asian people have a much lower conviction rate than any other ethnicity. <a href="#ref1"><i>[1]</i></a>
         """,
                      unsafe_allow_html=True)
 
@@ -119,7 +119,7 @@ def home():
     drugs[0].pyplot(drugs_graph())
     drugs[1].write("""
         Cannabis and Meth are by far the biggest contributors to drug convictions in NZ.
-        Multiple studies show Methamphetamine causing ~3x as much harm to self than Cannabis.
+        From one perspective the drugs' trends are positive, as multiple studies show Methamphetamine causing ~3x as much harm to self than Cannabis.
         <a href="#ref1"><i>[1]</i></a> <a href="#ref8"><i>[8]</i></a> <a href="#ref9"><i>[9]</i></a>
         """,
                    unsafe_allow_html=True)
@@ -128,23 +128,20 @@ def home():
     st.markdown('''
                 ## Costs
                 ''')
-    st.markdown("""One Prisoner""")
+    st.markdown("""One Prisoner <a href="#ref1"><i>[1]</i></a>""",
+                unsafe_allow_html=True)
     col1, col2, col3 = st.columns(3)
     col1.metric("Daily", "$385")
     col2.metric("Yearly", "$140,525")
     col3.metric("Avg Length Sentence", "$210,980")
     st.markdown(
-        """All Prisoners (based on a 6258 prisoner avg)<a href="#ref3"><i>[3]</i></a>""",
+        """All Prisoners (based on a 6258 prisoner avg) <a href="#ref3"><i>[3]</i></a>""",
         unsafe_allow_html=True
     )
     col1_all, col2_all = st.columns([1, 2])
     col1_all.metric("Daily", "$2,409,330")
     col2_all.metric("Yearly", "$879,405,450")
 
-    st.markdown("""
-                <a href="#ref1"><i>[1]</i></a>
-                """,
-                unsafe_allow_html=True)
     st.markdown('---')
 
     st.markdown('''
@@ -160,7 +157,7 @@ def home():
         unsafe_allow_html=True)
 
     demo[1].markdown("""
-            Having prisoners is expensive, the Dept of Correcctions employs 6400 staff to hold 8400 people captive in prison. <a href="#ref3"><i>[3]</i></a>
+            Having prisoners is expensive, the Dept of Corrections employs ~6400 staff to hold ~8400 people captive in prison. <a href="#ref3"><i>[3]</i></a>
         """,
         unsafe_allow_html=True)
 
@@ -180,11 +177,13 @@ def home():
     demo[0].pyplot(reimprisonment_graph())
 
     demo[1].markdown("""
-                The longer you stay in prisons the less likely you are to be reimprisoned.<br>
-                People who go to prison for less than 6 months have almost the same odds as a coin flip of going back to prison within 24 months.<br>
-                The rate of prisoners pursuing and acheiving skill certificates is low with only 0.6% people in prison. <br>
+                People who go to prison for less than 6 months have almost the same odds as a coin flip of going back to prison within 24 months. <a href="#ref3"><i>[3]</i></a> <br> <br>
+                The rate of prisoners pursuing and acheiving skill certificates is low with only 0.6% people in prison. <a href="#ref3"><i>[3]</i></a> <br> <br>
                 The average length prison sentence is 1.5 years. <a href="#ref3"><i>[3]</i></a>
-        """)
+                The longer you stay in prison the less likely you are to go back. <a href="#ref3"><i>[3]</i></a> <br>
+
+        """,
+                     unsafe_allow_html=True)
 
     st.markdown("---")
     st.markdown("""
