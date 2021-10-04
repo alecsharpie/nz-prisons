@@ -18,38 +18,30 @@ st.set_page_config(
     layout="wide")
 
 def home():
-    #st.markdown('''
-    #            ### Overview of NZ's Prison System
-    #            ''')
 
-    info = st.columns([2, 1])
+    st.markdown( """---""")
 
-    info[0].markdown("""
-                Created by [Alec Sharp](https://www.alecsharpie.me/), October 2021.
-                <br>
-                """,
-                     unsafe_allow_html=True)
-
-    info[0].markdown("""
+    st.markdown("""
                 There are 18 Prisons in New Zealand.
 
-                One prison, Auckland South Corrections Facility (Kohuora), is privately run by Serco. They manage over 500 prisons internationally. [ref2] <br>
-                The other 17 are run by NZ Government's Department of Corrections. [ref3]
+                One prison, Auckland South Corrections Facility (Kohuora), is privately run by Serco. They manage over 500 prisons internationally. <a href="#ref2"><i>[2]</i></a> <br> <br>
+                The other 17 are run by NZ Government's Department of Corrections. <a href="#ref3"><i>[3]</i></a>
 
                 """,
                 unsafe_allow_html=True)
 
-    info[1].markdown("""Glossary""")
+    st.markdown("""---""")
 
-    info[1].markdown("""
-                <b>Charge</b> - Accusing someone of an offence.
+    st.markdown("""Quick Glossary""")
+
+    st.markdown("""
+                <b>Charged</b> - Someone accused of an offence.
                 <br>
-                <br>
-                <b>Convict</b> - Declaring someone guilty of an offence.
+                <b>Convicted</b> - Someone Declared guilty of an offence.
                 """,
-                     unsafe_allow_html=True)
+                unsafe_allow_html=True)
 
-    info[1].markdown("""---""")
+    st.markdown("""---""")
 
     st.markdown('''
                 ### Number of prisoners per Capita
@@ -62,10 +54,10 @@ def home():
         If you line up all the countries by number of prisoners per capita, NZ is 61st from the top.
         To help visualize its position, imagine countries in 3 equal sized groups,
         New Zealand's group imprisons people at the highest rate.
-        [ref4] [ref5]
+        <a href="#ref4"><i>[4]</i></a> <a href="#ref5"><i>[5]</i></a>
         """)
     rate[1].write("""
-        The USA has the highest imprisonment rate, while Guinea-Bissau has the lowest. [ref4]
+        The USA has the highest imprisonment rate, while Guinea-Bissau has the lowest. <a href="#ref4"><i>[4]</i></a>
                   """)
     st.markdown("""---""")
 
@@ -77,22 +69,22 @@ def home():
     demo[0].pyplot(demo_graph())
 
     demo[1].markdown("""
-        Thankfully the proportion of young people being convicted of crimes has dropped significantly in the last 15 years. [ref1]
+        Thankfully the proportion of young people being convicted of crimes has dropped significantly in the last 15 years. <a href="#ref1"><i>[1]</i></a>
         """)
 
     demo[1].markdown("""
         <br>
         <br>
-        Men have always made up 80-90 percent of prisoners. [ref1]
+        Men have always made up 80-90 percent of prisoners. <a href="#ref1"><i>[1]</i></a>
         """,
                      unsafe_allow_html=True)
 
     demo[1].markdown("""
         <br>
         <br>
-        The proportion of convictions of Maori people has been increaing steadily for 40 years. [ref1]
+        The proportion of convictions of Maori people has been increaing steadily for 40 years. <a href="#ref1"><i>[1]</i></a>
         """,
-        unsafe_allow_html=True)
+                     unsafe_allow_html=True)
     st.markdown('---')
 
     st.markdown('''
@@ -103,20 +95,21 @@ def home():
     demo[0].pyplot(conv_rate_graph())
 
     demo[1].markdown("""
-        For the last 30 years Maori have had a higher conviction rate than any other ethnic group. Conviction rate is the percentage of people who have been convicted of the crime they were charged with. [ref1]
+        Conviction rate is the percentage of people who have been convicted of the crime they were charged with. <br>
+        For the last 30 years Maori have had a higher conviction rate than any other ethnic group. <a href="#ref1"><i>[1]</i></a>
         """,
-        unsafe_allow_html=True)
+                     unsafe_allow_html=True)
 
     demo[1].markdown("""
-        Maori people account for 53% of NZ's prisoners but only 17% of national population. [ref6] [ref7]
-        This means <b>1 in 174 Maori in NZ are in prison<b>, compared with 1 in 996 Non-Maori, and 1 in 1300 Pakeha.
+        Maori people account for 53% of NZ's prisoners but only 17% of national population. <a href="#ref6"><i>[6]</i></a> <a href="#ref7"><i>[7]</i></a>
+        This means 1 in 174 Maori in NZ are in prison, compared with 1 in 996 Non-Maori, and 1 in 1300 Pakeha.
         """,
-        unsafe_allow_html = True)
+                     unsafe_allow_html=True)
 
     demo[1].markdown("""
-        Asian people have
+        Asian people have a much lower conviction rate than any other ethnicity.<a href="#ref1"><i>[1]</i></a>
         """,
-        unsafe_allow_html=True)
+                     unsafe_allow_html=True)
 
     st.markdown("---")
 
@@ -128,17 +121,29 @@ def home():
     drugs[1].write("""
         Cannabis and Meth are by far the biggest contributors to drug convictions in NZ.
         Multiple studies show Methamphetamine causing ~3x as much harm to self than Cannabis.
-        [ref1] [ref8] [ref9]
+        <a href="#ref1"><i>[1]</i></a> <a href="#ref8"><i>[8]</i></a> <a href="#ref9"><i>[9]</i></a>
         """)
     st.markdown("""---""")
 
     st.markdown('''
                 ### Costs
                 ''')
-
+    st.markdown("""One Prisoner""")
     col1, col2, col3 = st.columns(3)
-    col1.metric("Prisoners", "8397")
-    col2.metric("Daily Cost of a Prisoner", "$385")
+    col1.metric("Daily", "$385")
+    col2.metric("Yearly", "$140,525")
+    col3.metric("Avg Length Sentence", "$210,980")
+    st.markdown(
+        """All Prisoners (based on a 6258 prisoner avg)<a href="#ref3"><i>[3]</i></a>"""
+    )
+    col1_all, col2_all = st.columns([1, 2])
+    col1_all.metric("Daily", "$2,409,330")
+    col2_all.metric("Yearly", "$879,405,450")
+
+    st.markdown("""
+                <a href="#ref1"><i>[1]</i></a>
+                """,
+                unsafe_allow_html=True)
     st.markdown('---')
 
     st.markdown('''
@@ -149,7 +154,7 @@ def home():
     demo[0].pyplot(staff_graph())
 
     demo[1].markdown("""
-                Having prisoners is expensive, we employ 6400 staff to hold 8400 people captive in prison. [ref3]
+                Having prisoners is expensive, we employ 6400 staff to hold 8400 people captive in prison. <a href="#ref3"><i>[3]</i></a>
 
         """)
 
@@ -163,9 +168,16 @@ def home():
     demo[0].pyplot(reimprisonment_graph())
 
     demo[1].markdown("""
-                Upskill Rates 0.6% ref[2]
+                The longer you stay in prisons the less likely you are to be reimprisoned. People who go to prison for less than 6 months have almost the same odds as a coin flip of going back to prison.
+                The rate of prisoners pursuing and acheiving skill certificates is low with only 0.6% people in prison <a href="#ref3"><i>[3]</i></a>
+                The average length prison sentence is 1.5 years.
         """)
 
+    st.markdown("---")
+    st.markdown("""
+                Click <a href="#nz-s-prisons">here</a> to go back up to the top of the page so you can check out the prisons directory.
+                """,
+                unsafe_allow_html=True)
     st.markdown("---")
 
     st.markdown("""
@@ -235,19 +247,14 @@ def home():
                 """,
                 unsafe_allow_html=True)
 
-
-
-
-
-
-
+    st.markdown("""---""")
 
     st.markdown("""
-                #### [ref4]
+            Created by [Alec Sharp](https://www.alecsharpie.me/), October 2021.
+            """,
+            unsafe_allow_html=True)
 
-                []()
-                """,
-                unsafe_allow_html=True)
+
 
 
 def prisons():
@@ -326,17 +333,22 @@ def prisons():
                             """,
             unsafe_allow_html=True)
 
-        st.markdown("""---""")
+    st.markdown("""---""")
+    st.markdown("""
+            Click <a href="#nz-s-prisons">here</a> to go back up to the top of the page so you can check out the prisons directory.
+            """,
+            unsafe_allow_html=True)
 
+    st.markdown("""---""")
 
-def resources():
-    pass
-
+    st.markdown("""
+        Created by [Alec Sharp](https://www.alecsharpie.me/), October 2021.
+        """,
+        unsafe_allow_html=True)
 
 # call app class object
 app = MultiPage()
 # Add pages
-app.add_page("Prisoners", home)
-app.add_page("Prisons", prisons)
-app.add_page("Resources", resources)
+app.add_page("Home", home)
+app.add_page("Prisons List", prisons)
 app.run()

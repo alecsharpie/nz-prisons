@@ -28,7 +28,7 @@ class MultiPage:
         st.markdown(""" """)
         tot_pages = len(self.menu)
         if self.location =="body":
-            cols = st.columns(6)
+            cols = st.columns(5)
         if self.location =="sidebar":
             cols = st.sidebar.columns(tot_pages)
         but_values = [cols[i].button(self.menu[i]['title'],key=self.menu[i]['title']) for i in range(tot_pages)]
