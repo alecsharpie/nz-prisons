@@ -1,11 +1,13 @@
 #production
 streamlit
+seaborn
 matplotlib
-numpy
 pandas
-streamlit_folium
-folium
+
+# only in unused get_maps
+#streamlit_folium
+#folium
 
 
 # dev
-staticmap
+#staticmap
