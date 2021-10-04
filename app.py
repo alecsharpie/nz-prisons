@@ -37,14 +37,14 @@ def home():
     st.markdown("""
                 <b>Charged</b> - Someone accused of an offence.
                 <br>
-                <b>Convicted</b> - Someone Declared guilty of an offence.
+                <b>Convicted</b> - Someone declared guilty of an offence.
                 """,
                 unsafe_allow_html=True)
 
     st.markdown("""---""")
 
     st.markdown('''
-                ### Number of prisoners per Capita
+                ## Comparing number of prisoners per capita
                 ''')
     rate = st.columns([2, 1])
 
@@ -55,14 +55,16 @@ def home():
         To help visualize its position, imagine countries in 3 equal sized groups,
         New Zealand's group imprisons people at the highest rate.
         <a href="#ref4"><i>[4]</i></a> <a href="#ref5"><i>[5]</i></a>
-        """)
+        """,
+                  unsafe_allow_html=True)
     rate[1].write("""
         The USA has the highest imprisonment rate, while Guinea-Bissau has the lowest. <a href="#ref4"><i>[4]</i></a>
-                  """)
+                  """,
+                  unsafe_allow_html=True)
     st.markdown("""---""")
 
     st.markdown('''
-                ### Demographics
+                ## Who are the people being convivted of crimes?
                 ''')
     demo = st.columns([2, 1])
 
@@ -70,25 +72,28 @@ def home():
 
     demo[1].markdown("""
         Thankfully the proportion of young people being convicted of crimes has dropped significantly in the last 15 years. <a href="#ref1"><i>[1]</i></a>
-        """)
+        """,
+                     unsafe_allow_html=True)
 
     demo[1].markdown("""
-        <br>
-        <br>
         Men have always made up 80-90 percent of prisoners. <a href="#ref1"><i>[1]</i></a>
         """,
                      unsafe_allow_html=True)
 
     demo[1].markdown("""
-        <br>
-        <br>
         The proportion of convictions of Maori people has been increaing steadily for 40 years. <a href="#ref1"><i>[1]</i></a>
+        """,
+                     unsafe_allow_html=True)
+
+    demo[1].markdown("""
+        Maori people account for 53% of NZ's prisoners but only 17% of national population. <br>
+        This means 1 in 174 Maori in NZ are in prison, compared with 1 in 996 Non-Maori, and 1 in 1300 Pakeha. <a href="#ref6"><i>[6]</i></a> <a href="#ref7"><i>[7]</i></a>
         """,
                      unsafe_allow_html=True)
     st.markdown('---')
 
     st.markdown('''
-                ### Conviction rate inequality
+                ## Conviction rate inequality
                 ''')
     demo = st.columns([2, 1])
 
@@ -101,12 +106,6 @@ def home():
                      unsafe_allow_html=True)
 
     demo[1].markdown("""
-        Maori people account for 53% of NZ's prisoners but only 17% of national population. <a href="#ref6"><i>[6]</i></a> <a href="#ref7"><i>[7]</i></a>
-        This means 1 in 174 Maori in NZ are in prison, compared with 1 in 996 Non-Maori, and 1 in 1300 Pakeha.
-        """,
-                     unsafe_allow_html=True)
-
-    demo[1].markdown("""
         Asian people have a much lower conviction rate than any other ethnicity.<a href="#ref1"><i>[1]</i></a>
         """,
                      unsafe_allow_html=True)
@@ -114,7 +113,7 @@ def home():
     st.markdown("---")
 
     st.markdown('''
-                ### Drug Offences
+                ## Drug Offences
                 ''')
     drugs = st.columns([2, 1])
     drugs[0].pyplot(drugs_graph())
@@ -122,11 +121,12 @@ def home():
         Cannabis and Meth are by far the biggest contributors to drug convictions in NZ.
         Multiple studies show Methamphetamine causing ~3x as much harm to self than Cannabis.
         <a href="#ref1"><i>[1]</i></a> <a href="#ref8"><i>[8]</i></a> <a href="#ref9"><i>[9]</i></a>
-        """)
+        """,
+                   unsafe_allow_html=True)
     st.markdown("""---""")
 
     st.markdown('''
-                ### Costs
+                ## Costs
                 ''')
     st.markdown("""One Prisoner""")
     col1, col2, col3 = st.columns(3)
@@ -134,7 +134,8 @@ def home():
     col2.metric("Yearly", "$140,525")
     col3.metric("Avg Length Sentence", "$210,980")
     st.markdown(
-        """All Prisoners (based on a 6258 prisoner avg)<a href="#ref3"><i>[3]</i></a>"""
+        """All Prisoners (based on a 6258 prisoner avg)<a href="#ref3"><i>[3]</i></a>""",
+        unsafe_allow_html=True
     )
     col1_all, col2_all = st.columns([1, 2])
     col1_all.metric("Daily", "$2,409,330")
@@ -147,30 +148,42 @@ def home():
     st.markdown('---')
 
     st.markdown('''
-                ### Staff
+                ## Staff
                 ''')
     demo = st.columns([2, 1])
 
     demo[0].pyplot(staff_graph())
 
     demo[1].markdown("""
-                Having prisoners is expensive, we employ 6400 staff to hold 8400 people captive in prison. <a href="#ref3"><i>[3]</i></a>
+            A fair comparison of ethnicities is difficult because prisoners are only allowed to identify as one ethnicity, whereas staff can identify as multiple. <a href="#ref3"><i>[3]</i></a> <a href="#ref6"><i>[6]</i></a>
+        """,
+        unsafe_allow_html=True)
 
-        """)
+    demo[1].markdown("""
+            Having prisoners is expensive, the Dept of Correcctions employs 6400 staff to hold 8400 people captive in prison. <a href="#ref3"><i>[3]</i></a>
+        """,
+        unsafe_allow_html=True)
+
+    demo[1].markdown("""
+            Specifically: <br>
+            240 nurses, 59 mental health experts, & 4,103 frontline corrections officers <a href="#ref3"><i>[3]</i></a>
+            """,
+                     unsafe_allow_html=True)
 
     st.markdown("---")
 
     st.markdown('''
-                ### Re-imprisonment
+                ## Re-imprisonment
                 ''')
     demo = st.columns([2, 1])
 
     demo[0].pyplot(reimprisonment_graph())
 
     demo[1].markdown("""
-                The longer you stay in prisons the less likely you are to be reimprisoned. People who go to prison for less than 6 months have almost the same odds as a coin flip of going back to prison.
-                The rate of prisoners pursuing and acheiving skill certificates is low with only 0.6% people in prison <a href="#ref3"><i>[3]</i></a>
-                The average length prison sentence is 1.5 years.
+                The longer you stay in prisons the less likely you are to be reimprisoned.<br>
+                People who go to prison for less than 6 months have almost the same odds as a coin flip of going back to prison within 24 months.<br>
+                The rate of prisoners pursuing and acheiving skill certificates is low with only 0.6% people in prison. <br>
+                The average length prison sentence is 1.5 years. <a href="#ref3"><i>[3]</i></a>
         """)
 
     st.markdown("---")
@@ -221,7 +234,7 @@ def home():
 
     st.markdown("""
                 #### [ref6]
-                Dpet of Corrections, Prison stats June 2021 <br>
+                Dept of Corrections, Prison stats June 2021 <br>
                 [https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_stats_june_2021#ethnicity](https://www.corrections.govt.nz/resources/statistics/quarterly_prison_statistics/prison_stats_june_2021#ethnicity)
 
                 """,

@@ -25,9 +25,6 @@ def rate_graph():
 
     pop_df = pd.read_csv('data/imprisonment_per_population.csv')
 
-    #sns.set_style("ticks")
-    #sns.set_palette('colorblind')
-
     pal1 = sns.color_palette("colorblind", 6)
     sns.set_palette(pal1)
 
@@ -110,9 +107,6 @@ def drugs_graph():
 
     conviction_count = pd.read_csv('data/drug_conviction_count.csv')
 
-    #sns.set_style("ticks")
-    #sns.set_palette('colorblind')
-
     pal1 = sns.color_palette("colorblind", 6)
     sns.set_palette(pal1)
 
@@ -129,12 +123,6 @@ def drugs_graph():
 def demo_graph():
 
     age_df = get_demo_data('age')
-
-    #sns.set_style("ticks")
-    #sns.set_palette("colorblind")
-
-    #pal1 = sns.color_palette("colorblind", 6)
-    #sns.set_palette(pal1)
 
     fig, ax = plt.subplots(3, 1, figsize=(8, 12))
 
@@ -186,9 +174,9 @@ def staff_graph():
                 palette='colorblind',
                 dodge=False,
                 ax=ax)
-    plt.legend(title='Drug')
-    plt.xlabel('Year')
-    plt.ylabel('Conviction rate if charged (%)')
+    plt.legend(title='Ethnicity')
+    plt.xlabel('% who identify with each ethnicity')
+    plt.ylabel('')
     sns.despine()
     return fig
 
